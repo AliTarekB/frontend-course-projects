@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title></title>
+   <link href="/src/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+    <style>
+      * {
+        font-family: sans-serif;
+
+      }
+      
+      
+      
+        header{
+            margin: 10px auto ;
+            width: 90% ;
+            padding: 10px;
+            border: 1px solid ;
+            border-radius: 10px;
+        }
+
+
+    </style>
+
+</head>
+<body class="bg-primary-subtle">
+    <header class="d-flex justify-content-between bg-body">
+        <img src="logo.svg" alt="">
+        <div class="d-flex justify-content-end">
+         <button id="sun" class="btn btn-dark d-none"><img src="icon-sun.svg" alt=""></button>
+        </div>
+       <div class="d-flex justify-content-end">
+         <button id="moon" class="btn btn-light"><img src="icon-moon.svg" alt=""></button>
+        </div> 
+    </header>
+    <section class="d-flex flex-wrap gap-3 m-5  justify-content-between">
+        <h1>Extension list</h1>
+        <div>
+            <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked onclick="disp3()">
+            <label class="btn btn-light" for="option1">All</label>
+
+            <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off" onclick="disp2()">
+            <label class="btn btn-light" for="option2">Active</label>
+
+            <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off" onclick="disp()">
+            <label class="btn btn-light" for="option3">Inactive</label>
+        </div>
+    </section>
+     <div class="d-flex flex-wrap gap-3 " id="box" style="margin-left: 50px; margin-right:50px ;">
+    <div class="bg-white rounded-lg px-6 py-8 ring shadow-xl w-sm ring-gray-900/5"  id="1">
+  <div class="d-flex">
+    <span class="inline-flex items-center justify-center rounded-md p-2"> 
+      <svg class="h-6 w-6 stroke-white" ...>
+        <img src="logo-devlens.svg" alt="">
+      </svg>
+    </span>
+    <div class="ms-2">
+        <div>DevLens</div>
+        <div> Quickly inspect pages layout and visualise element boundaries</div>
+    </div>
+  </div>
+  
+  <div class="d-flex justify-content-between align-items-center mt-3" >
+    <button type="button" class="btn btn-danger " id="remove" onclick="myFunction()">Remove</button>
+  <div class="form-check form-switch d-flex justify-content-end">
+    <input class="form-check-input " type="checkbox" role="switch" id="switchCheckDefault1">
+  </div>
+    </div>
+     </div>
+     <div class="bg-white w-sm rounded-lg px-6 py-8 ring shadow-xl ring-gray-900/5"  id="2">
+  <div class="d-flex">
+    <span class="inline-flex items-center justify-center rounded-md p-2"> 
+      <svg class="h-6 w-6 stroke-white" ...>
+        <img src="logo-style-spy.svg" alt="">
+      </svg>
+    </span>
+    <div class="ms-2">
+        <div>StyleSpy</div>
+        <div> instantly analyze and copy CSS from any webpage element</div>
+    </div>
+  </div>
+  
+  <div class="d-flex justify-content-between align-items-center mt-3">
+    <button type="button" class="btn btn-danger " id="remove" onclick="myFunction2()">Remove</button>
+  <div class="form-check form-switch d-flex justify-content-end">
+    <input class="form-check-input " type="checkbox" role="switch" id="switchCheckDefault2">
+  </div>
+    </div>
+     </div>
+     <div class="bg-white w-sm rounded-lg px-6 py-8 ring shadow-xl ring-gray-900/5"  id="3">
+  <div class="d-flex">
+    <span class="inline-flex items-center justify-center rounded-md p-2"> 
+      <svg class="h-6 w-6 stroke-white" ...>
+        <img src="logo-speed-boost.svg" alt="">
+      </svg>
+    </span>
+    <div class="ms-2">
+        <div>SpeedBoost</div>
+        <div> Optimizes browser resource usage to accelarte page loading </div>
+    </div>
+  </div>
+  
+  <div class="d-flex justify-content-between align-items-center mt-3">
+    <button type="button" class="btn btn-danger " id="remove" onclick="myFunction3()">Remove</button>
+  <div class="form-check form-switch d-flex justify-content-end">
+    <input class="form-check-input " type="checkbox" role="switch" id="switchCheckDefault3">
+  </div>
+    </div>
+     </div>
+     <div class="bg-white w-sm rounded-lg px-6 py-8 ring shadow-xl ring-gray-900/5"  id="4">
+  <div class="d-flex">
+    <span class="inline-flex items-center justify-center rounded-md p-2"> 
+      <svg class="h-6 w-6 stroke-white" ...>
+        <img src="logo-json-wizard.svg" alt="">
+      </svg>
+    </span>
+    <div class="ms-2">
+        <div>JSONWizard</div>
+        <div> formates valdiates and prettifies JSON responses in-browser</div>
+    </div>
+  </div>
+  
+  <div class="d-flex justify-content-between align-items-center mt-3">
+    <button type="button" class="btn btn-danger " id="remove" onclick="myFunction4()">Remove</button>
+  <div class="form-check form-switch d-flex justify-content-end">
+    <input class="form-check-input " type="checkbox" role="switch" id="switchCheckDefault4">
+  </div>
+    </div>
+     </div>
+     <div class="bg-white w-sm rounded-lg px-6 py-8 ring shadow-xl ring-gray-900/5"  id="5">
+  <div class="d-flex">
+    <span class="inline-flex items-center justify-center rounded-md p-2"> 
+      <svg class="h-6 w-6 stroke-white" ...>
+        <img src="logo-tab-master-pro.svg" alt="">
+      </svg>
+    </span>
+    <div class="ms-2">
+        <div>TabMaster Pro</div>
+        <div> organizes browser tabs into groups and sessions</div>
+    </div>
+  </div>
+  
+  <div class="d-flex justify-content-between align-items-center mt-3">
+    <button type="button" class="btn btn-danger " id="remove" onclick="myFunction5()">Remove</button>
+  <div class="form-check form-switch d-flex justify-content-end">
+    <input class="form-check-input " type="checkbox" role="switch" id="switchCheckDefault5">
+  </div>
+    </div>
+     </div>
+     <div class="bg-white  w-sm rounded-lg px-6 py-8 ring shadow-xl ring-gray-900/5"  id="6">
+  <div class="d-flex">
+    <span class="inline-flex items-center justify-center rounded-md p-2"> 
+      <svg class="h-6 w-6 stroke-white" ...>
+        <img src="logo-viewport-buddy.svg" alt="">
+      </svg>
+    </span>
+    <div class="ms-2">
+        <div>ViewPortBuddy</div>
+        <div> Simulates various screen resolutions directly within the browser</div>
+    </div>
+  </div>
+  
+  <div class="d-flex justify-content-between align-items-center mt-3">
+    <button type="button" class="btn btn-danger " id="remove" onclick="myFunction6()">Remove</button>
+  <div class="form-check form-switch d-flex justify-content-end">
+    <input class="form-check-input " type="checkbox" role="switch" id="switchCheckDefault6">
+  </div>
+    </div>
+     </div>
+     <div class="bg-white  w-sm rounded-lg px-6 py-8 ring shadow-xl ring-gray-900/5"  id="7">
+  <div class="d-flex">
+    <span class="inline-flex items-center justify-center rounded-md p-2"> 
+      <svg class="h-6 w-6 stroke-white" ...>
+        <img src="logo-markup-notes.svg" alt="">
+      </svg>
+    </span>
+    <div class="ms-2">
+        <div>Markup Notes</div>
+        <div> Enables annotation and notes directly onto webpages for collaborative debugging.</div>
+    </div>
+  </div>
+  
+  <div class="d-flex justify-content-between align-items-center mt-3">
+    <button type="button" class="btn btn-danger " id="remove" onclick="myFunction7()">Remove</button>
+  <div class="form-check form-switch d-flex justify-content-end">
+    <input class="form-check-input " type="checkbox" role="switch" id="switchCheckDefault7">
+  </div>
+    </div>
+     </div>
+     <div class="bg-white w-sm rounded-lg px-6 py-8 ring shadow-xl ring-gray-900/5"  id="8">
+  <div class="d-flex">
+    <span class="inline-flex items-center justify-center rounded-md p-2"> 
+      <svg class="h-6 w-6 stroke-white" ...>
+        <img src="logo-grid-guides.svg" alt="">
+      </svg>
+    </span>
+    <div class="ms-2">
+        <div>GridGuides</div>
+        <div> Overlay customizable grids and alignment guides on any webpages</div>
+    </div>
+  </div>
+  
+  <div class="d-flex justify-content-between align-items-center mt-3">
+    <button type="button" class="btn btn-danger " id="remove" onclick="myFunction8()">Remove</button>
+  <div class="form-check form-switch d-flex justify-content-end">
+    <input class="form-check-input " type="checkbox" role="switch" id="switchCheckDefault8">
+  </div>
+    </div>
+     </div>
+     <div class="bg-white w-sm rounded-lg px-6 py-8 ring shadow-xl ring-gray-900/5"  id="9">
+  <div class="d-flex">
+    <span class="inline-flex items-center justify-center rounded-md p-2"> 
+      <svg class="h-6 w-6 stroke-white" ...>
+        <img src="logo-palette-picker.svg" alt="">
+      </svg>
+    </span>
+    <div class="ms-2">
+        <div>Palette Picker</div>
+        <div> Instantly extracts color palette from any webpage</div>
+    </div>
+  </div>
+  
+  <div class="d-flex justify-content-between align-items-center mt-3">
+    <button type="button" class="btn btn-danger " id="remove" onclick="myFunction9()">Remove</button>
+  <div class="form-check form-switch d-flex justify-content-end">
+    <input class="form-check-input " type="checkbox" role="switch" id="switchCheckDefault9">
+  </div>
+    </div>
+     </div>
+     <div class="bg-white w-sm rounded-lg px-6 py-8 ring shadow-xl ring-gray-900/5"  id="10">
+  <div class="d-flex">
+    <span class="inline-flex items-center justify-center rounded-md p-2"> 
+      <svg class="h-6 w-6 stroke-white" ...>
+        <img src="logo-link-checker.svg" alt="">
+      </svg>
+    </span>
+    <div class="ms-2">
+        <div>LinkChecker</div>
+        <div>Scans and highlights broken links on any page </div>
+    </div>
+  </div>
+  
+  <div class="d-flex justify-content-between align-items-center mt-3">
+    <button type="button" class="btn btn-danger " id="remove" onclick="myFunction10()">Remove</button>
+  <div class="form-check form-switch d-flex justify-content-end">
+    <input class="form-check-input " type="checkbox" role="switch" id="switchCheckDefault10">
+  </div>
+    </div>
+     </div>
+     <div class="bg-white w-sm rounded-lg px-6 py-8 ring shadow-xl ring-gray-900/5"  id="11">
+  <div class="d-flex">
+    <span class="inline-flex items-center justify-center rounded-md p-2"> 
+      <svg class="h-6 w-6 stroke-white" ...>
+        <img src="logo-dom-snapshot.svg" alt="">
+      </svg>
+    </span>
+    <div class="ms-2">
+        <div>DOM Snapshot</div>
+        <div>capture and export DOM structers quickly</div>
+    </div>
+  </div>
+  
+  <div class="d-flex justify-content-between align-items-center mt-3">
+    <button type="button" class="btn btn-danger " id="remove" onclick="myFunction11()">Remove</button>
+  <div class="form-check form-switch d-flex justify-content-end">
+    <input class="form-check-input " type="checkbox" role="switch" id="switchCheckDefault11">
+  </div>
+    </div>
+     </div>
+     <div class="bg-white w-sm rounded-lg px-6 py-8 ring shadow-xl ring-gray-900/5"  id="12">
+  <div class="d-flex">
+    <span class="inline-flex items-center justify-center rounded-md p-2"> 
+      <svg class="h-6 w-6 stroke-white" ...>
+        <img src="logo-console-plus.svg" alt="">
+      </svg>
+    </span>
+    <div class="ms-2">
+        <div>ConsolePlus</div>
+        <div>Enhanced developer console with advanced filtering and logging </div>
+    </div>
+  </div>
+  
+  <div class="d-flex justify-content-between align-items-center mt-3">
+    <button type="button" class="btn btn-danger " id="remove" onclick="myFunction12()">Remove</button>
+  <div class="form-check form-switch d-flex justify-content-end">
+    <input class="form-check-input " type="checkbox" role="switch" id="switchCheckDefault12">
+  </div>
+    </div>
+     </div>
+     
+     </div>
+</body>
+<script src="style.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+</html>
+
